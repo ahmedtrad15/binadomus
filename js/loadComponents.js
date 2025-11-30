@@ -1,26 +1,26 @@
 // Fonction pour charger les composants (header et footer)
-async function loadComponents() {
-    try {
-        // Charger le header
-        const headerResponse = await fetch('../components/header.html');
-        const headerHTML = await headerResponse.text();
-        document.getElementById('header-container').innerHTML = headerHTML;
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("../components/header.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("header-container").innerHTML = data;
+            const mobileMenuToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
 
-        // Charger le footer
-        const footerResponse = await fetch('../components/footer.html');
-        const footerHTML = await footerResponse.text();
-        document.getElementById('footer-container').innerHTML = footerHTML;
+            mobileMenuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+                this.querySelector('i').classList.toggle('fa-bars');
+                this.querySelector('i').classList.toggle('fa-times');
+            });
+        });
 
-        // Initialiser les fonctionnalités après le chargement
-        initializeFeatures();
-        
-        
-    } catch (error) {
-        console.error('Erreur lors du chargement des composants:', error);
-    }
 
-    
-}
 
-// Charger les composants au démarrage
-document.addEventListener('DOMContentLoaded', loadComponents);
+    // Load footer
+    fetch("../components/footer.html")
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById("footer").innerHTML = data;
+        });
+
+});
