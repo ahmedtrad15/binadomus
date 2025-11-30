@@ -1,6 +1,6 @@
 // Fonction pour charger les composants (header et footer)
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("../components/header.html")
+    fetch("header.html")
         .then(res => res.text())
         .then(data => {
             document.getElementById("header-container").innerHTML = data;
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Load footer
-    fetch("../components/footer.html")
+    fetch("footer.html")
         .then(res => res.text())
         .then(data => {
-            document.getElementById("footer").innerHTML = data;
+            document.getElementById("footer-container").innerHTML = data;
         });
 
 });

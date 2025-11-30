@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BINA DOMUS - Menuiseries PVC et Aluminium sur mesure</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -27,9 +27,9 @@
                     aluminium. Solutions personnalisées pour votre habitat : fenêtres, portes, volets roulants et bien
                     plus encore.</p>
                 <div class="hero-buttons">
-                    <a href="pages/contact.html" class="btn" data-page="contact" data-i18n="hero.button1">Demander un devis
+                    <a href="contact.html" class="btn" data-page="contact" data-i18n="hero.button1">Demander un devis
                         gratuit</a>
-                    <a href="pages/produit.html" class="btn btn-secondary" data-i18n="hero.button2">Découvrir nos produits</a>
+                    <a href="produit.html" class="btn btn-secondary" data-i18n="hero.button2">Découvrir nos produits</a>
                   
                 </div>
             </div>
@@ -134,7 +134,7 @@
                             <span class="product-feature">Bois</span>
                             <span class="product-feature">Mixte</span>
                         </div>
-                        <a href="pages/fenetre.html" class="product-category-card__link">
+                        <a href="fenetre.html" class="product-category-card__link">
                             <span>Découvrir les fenêtres</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -158,7 +158,7 @@
                             <span class="product-feature">Isolation</span>
                             <span class="product-feature">Design</span>
                         </div>
-                        <a href="pages/porte.html" class="product-category-card__link">
+                        <a href="porte.html" class="product-category-card__link">
                             <span>Découvrir les portes</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -182,7 +182,7 @@
                             <span class="product-feature">Luminosité</span>
                             <span class="product-feature">Moderne</span>
                         </div>
-                        <a href="pages/coulissant.html" class="product-category-card__link">
+                        <a href="coulissant.html" class="product-category-card__link">
                             <span>Découvrir les coulissants</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -206,7 +206,7 @@
                             <span class="product-feature">Isolation</span>
                             <span class="product-feature">Motorisation</span>
                         </div>
-                        <a href="pages/voulet_roulant.html" class="product-category-card__link">
+                        <a href="voulet_roulant.html" class="product-category-card__link">
                             <span>Découvrir les volets</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -231,7 +231,7 @@
                             <span class="product-feature">Motorisation</span>
                             <span class="product-feature">Design</span>
                         </div>
-                        <a href="pages/porte_garage.html" class="product-category-card__link">
+                        <a href="porte_garage.html" class="product-category-card__link">
                             <span>Découvrir les portes de garage</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -254,7 +254,7 @@
                             <span class="product-feature">Meilleure isolation</span>
                             <span class="product-feature">Confort d’usage</span>
                         </div>
-                        <a href="pages/accessoires.html" class="product-category-card__link" >
+                        <a href="accessoires.html" class="product-category-card__link" >
                             <span>Découvrir les accessoires</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -275,7 +275,7 @@
                     et vous proposer la solution la plus adaptée à vos besoins et à votre budget.
                 </p>
                 <div class="products-cta__buttons">
-                    <a href="pages/contact.html" class="btn btn--primary" data-page="contact">
+                    <a href="contact.html" class="btn btn--primary" data-page="contact">
                         <i class="fas fa-envelope"></i>
                         Demander un devis
                     </a>
@@ -294,33 +294,9 @@
 
     <div id="footer-container"></div>
 
-    <script> document.addEventListener("DOMContentLoaded", function () {
-    fetch("/binadomus/components/header.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("header-container").innerHTML = data;
-            const mobileMenuToggle = document.getElementById('mobile-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            mobileMenuToggle.addEventListener('click', function () {
-                navMenu.classList.toggle('active');
-                this.querySelector('i').classList.toggle('fa-bars');
-                this.querySelector('i').classList.toggle('fa-times');
-            });
-        });
 
 
-
-    // Load footer
-    fetch("/binadomus/components/footer.html")
-        .then(res => res.text())
-        .then(data => {
-            document.getElementById("footer").innerHTML = data;
-        });
-
-}); </script>
-
-
+    <script src="js/loadComponents.js"></script>
     <script src="js/main.js"></script>
 
 </body>
